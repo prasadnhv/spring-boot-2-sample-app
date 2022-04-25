@@ -37,10 +37,10 @@ steps:
         my-spring-app:
           image: '${{build_app_image}}'
           ports:
-            - 7070
+            - 8080
       readiness:
         timeoutSeconds: 30
         periodSeconds: 15
         image: byrnedo/alpine-curl
         commands:
-          - "curl http://my-spring-app:7070/"
+          - "curl http://my-spring-app:8080/"
